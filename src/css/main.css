@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 18px;
+    background-color: hsl(27, 66%, 92%);
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/******************* card header *******************/
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ec755d;
+    border-radius: 1rem;
+    padding: 1rem 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.wallet {
+    color: white;
+}
+
+.balance {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/******************* card body *******************/
+
+.card-body {
+    padding: 1rem 1.7rem;
+    background-color: #fffcf7;
+    border-radius: 1rem;
+    max-width: 800px;
+
+}
+
+.spending-text {
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding-bottom: 1.5rem;
+}
+
+.chart-box {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: #ec755d4d 0.5px solid;
+    align-items: end;
+    position: relative;
+
+}
+
+#perde {
+    position: absolute;
+    background-color: #fffcf7;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3 !important;
+}
+
+.chart-rider {
+    background-color: #321a0f;
+    color: #fffcf7;
+    position: absolute;
+    width: 170%;
+    padding: 0.2rem;
+    top: -29px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    border-radius: 5px;
+    z-index: 1;
+
+}
+
+.day-box {
+    display: grid;
+    grid-template-rows: minmax(200px, auto) auto;
+    align-items: end;
+
+    font-size: 0.8rem;
+    width: 45px;
+}
+
+.chart-bar {
+    background-color: #ec755d;
+    border-radius: 0.3rem;
+    position: relative;
+
+}
+
+.chart-bar:hover:not(:last-child) {
+    cursor: pointer;
+    background-color: #f79c8a;
+    transition: all .3s;
+}
+
+.chart-bar.higher {
+    background-color: #76b5bc;
+}
+
+.chart-bar.higher:hover {
+    background-color: #b8e6eb;
+    transition: all .3s;
+}
+
+
+/******************* bottom *******************/
+.profit-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.income-percent-wrapper {
+    color: #321a0f;
+    font-size: 1rem;
+    text-align: end;
+}
+
+.income-percent {
+    font-weight: bold;
+}
+
+.montly-income,
+.weekly-income {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(54, 28%, 55%);
+    text-decoration: none;
+}
+
+/* **************** Flipcard **************** */
+.flip-card {
+    width: 150px;
+    height: 80px;
+    perspective: 1000px;
+}
+
+.flip-card:hover {
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: start;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.flip-card-front {
+    color: rgb(50, 26, 15);
+    border-radius: 1rem;
+    background-color: #f7e9dc;
+}
+
+.flip-card-back {
+    background-color: #ec755d;
+    color: #fffcf7;
+    transform: rotateY(180deg);
+    border-radius: 1rem;
+}
+
+@media(max-width: 576px) {
+    .card-body {
+        width: 400px;
+    }
+}
+
+@media(max-width: 435px) {
+    .card-body {
+        width: 360px;
+    }
+
+    .chart-box {
+        gap: 0.5rem;
+
+    }
+}
